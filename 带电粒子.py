@@ -236,7 +236,7 @@ class Ball(pygame.sprite.Sprite):
 main_dir = os.path.split(os.path.abspath(__file__))[0]        
 def load_image(file):
     "loads an image, prepares it for play"
-    file = os.path.join(main_dir, 'data', file)
+    file = os.path.join(main_dir, 'res', file)
     try:
         surface = pygame.image.load(file)
     except pygame.error:
@@ -315,7 +315,7 @@ class Game(threading.Thread):
                 self.ball=Ball(pygame.mouse.get_pos(),self.v0,self.ballq,self.ballm)
                 self.setballing=False
 
-  # 设置为True, 让线程停止阻塞
+  
     def run(self):
         FPSClock=pygame.time.Clock()    
         self.screen = pygame.display.set_mode((1200, 700))
